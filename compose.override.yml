@@ -1,0 +1,10 @@
+services:
+  api:
+    # In development, override the default command to apply migrations, collect static files,
+    # and run the Django development server.
+    command: >
+      sh -c "
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      python manage.py runserver 0.0.0.0:8000
+      "
